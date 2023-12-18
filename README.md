@@ -1,0 +1,2 @@
+# stockManagement
+connect with database
