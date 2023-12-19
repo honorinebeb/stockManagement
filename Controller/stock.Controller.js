@@ -35,10 +35,4 @@ module.exports ={
     listStock
 }
 
-const findByEmail = async (req, res, next) => { 
-    
-}
 
-module.exports = {
-    create, update, remove, findById, list, findByEmail
-}
