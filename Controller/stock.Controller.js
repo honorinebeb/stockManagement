@@ -1,4 +1,4 @@
-const productModel = require('../models/stock.model');
+
 const ProductModel = require('../models/stock.model'); 
 
 const create = async (req, res, next) => { 
@@ -10,28 +10,29 @@ const create = async (req, res, next) => {
         console.log(savedProduct);
 
         res.status(201).json({
-            message: 'Product created',
+            message: 'Product created successfully',
             product: savedProduct
         })
     } catch (error) {
-        res.status(500).send("Failed to save!!");
+        res.status(500).send("Failed to save product!!");
+    }
+};
+
+let listStock = async (req, res, next) => {
+    try {
+        let stock=await ProductModel.find({});
+        res.status(200).json(stock);
+
+        
+    } catch (error) {
+        res.status(500).send('Failed to find stock products')
     }
 }
 
-const update = async (req, res, next) => { 
-    
-}
 
-const remove = async (req, res, next) => { 
-    
-}
-
-const findById = async (req, res, next) => { 
-    
-}
-
-const list = async (req, res, next) => { 
-    
+module.exports ={
+    create,
+    listStock
 }
 
 const findByEmail = async (req, res, next) => { 

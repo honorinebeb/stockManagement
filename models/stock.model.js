@@ -2,21 +2,18 @@ const mongoose = require('mongoose');
 
 const ProductSchema = new mongoose.Schema({
     productCode: { required: true, type: String },
-    price: { required: true, type: String },
+    price: { required: true, type: Number },
     amount: { required: true, type: String },
-    quality: { required: true, type: String },
-    email: { required: true, type: String },
-    expiredDate: { required: true, type: String },
-    nationalId: { required: true, type: String },
-    role: {
-        type: String,
+    quality: { required: true, type: Number },
+    measurements: {
         required: true,
+        type: String,
         enum: {
-            values: ["Secretary", "assistant","STOCK_ADMIN","STOCK"],
-            message: "{value} is not a valid role",
+            values: ["LITLES", "PCS","MIL","GRAMS"],
+            message: "{value} is not a valid ",
         }
     },
-    createDate: { 
+    expiredDate: { 
         required: true, 
         type: Date,
         default: new Date(), 

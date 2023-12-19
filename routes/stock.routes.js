@@ -1,12 +1,8 @@
+const { create, listStock} = require('../Controller/stock.Controller');
 const express = require('express');
-const stockRoutes = express.Router();
-const { create, findByEmail, findById, list, remove, update  } = require('../Controller/stock.Controller');
+const stockRoutes = express.Routers();
 
-stockRoutes.get('/list', list);
+
+stockRoutes.post('/list',listStock);
 stockRoutes.post('/add', create);
-stockRoutes.get('/findById/:id', findById);
-stockRoutes.get('/findByEmail/:email', findByEmail);
-stockRoutes.put('/update', update);
-stockRoutes.delete('/delete', remove);
-
 module.exports = stockRoutes;
