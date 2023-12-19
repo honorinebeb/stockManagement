@@ -3,6 +3,6 @@ const express = require('express');
 const stockRoutes = express.Router();
 
 
-stockRoutes.post('/list',listStock);
+stockRoutes.get('/list',listStock);
 stockRoutes.post('/add', create);
 module.exports = stockRoutes;
